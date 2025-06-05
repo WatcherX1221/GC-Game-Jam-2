@@ -16,6 +16,10 @@ public class SongManager : MonoBehaviour
 
     public int difficulty;
 
+    // Beats per Bar
+
+    public int bpb = 4;
+
     // Start is called before the first frame update
     void Start()
     {
