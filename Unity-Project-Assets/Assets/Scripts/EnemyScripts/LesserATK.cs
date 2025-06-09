@@ -7,11 +7,19 @@ public class LesserATK : MonoBehaviour
     public int attackLane;
     public int attackRow;
     GameObject songManager;
+    public GameObject owningEnemy;
     // Start is called before the first frame update
     void Start()
     {
         songManager = GameObject.FindGameObjectWithTag("TrackManager");
         ChoosePosition();
+    }
+    private void Update()
+    {
+        if(owningEnemy == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void ChoosePosition()
     {
@@ -20,6 +28,7 @@ public class LesserATK : MonoBehaviour
         Lanes.AddRange(GameObject.FindGameObjectsWithTag("Lane"));
 
         attackLane = Random.Range(0, songManager.GetComponent<SongManager>().laneCount);
+
 
         for (int i = 0; i < Lanes.Count; i++)
         {
@@ -36,11 +45,11 @@ public class LesserATK : MonoBehaviour
         }
         else if (attackRow == 2)
         {
-            transform.position = new Vector2(transform.position.x, GameObject.FindGameObjectWithTag("Row1").transform.position.y);
+            transform.position = new Vector2(transform.position.x, GameObject.FindGameObjectWithTag("Row2").transform.position.y);
         }
         else if (attackRow == 3)
         {
-            transform.position = new Vector2(transform.position.x, GameObject.FindGameObjectWithTag("Row1").transform.position.y);
+            transform.position = new Vector2(transform.position.x, GameObject.FindGameObjectWithTag("Row3").transform.position.y);
         }
     }
 }
