@@ -2,23 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongManager : MonoBehaviour
+public class Lane : MonoBehaviour
 {
-    // Lane Count
-
-    public int laneCount = 4;
-
-    // Track BMP
-
-    public float bpm;
-
-    // Difficulty
-
-    public int difficulty;
-
-    // Beats per Bar
-
-    public int bpb = 4;
+    public int laneID;
 
     // Start is called before the first frame update
     void Start()
