@@ -9,18 +9,21 @@ public class ChartManager : MonoBehaviour
     public List<int> chart = new List<int>();
     public GameObject lesser;
     public GameObject swapper;
+    public GameObject phantom;
+    public GameObject stretcher;
     public GameObject currentEnemy;
+    GameObject songManager;
     // Start is called before the first frame update
     void Start()
     {
+        songManager = GameObject.FindGameObjectWithTag("TrackManager");
         GetChart();
         GetBarEnemy();
     }
-
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow) && currentBar + 1 <= chart.Count)
+        if(Input.GetKeyDown(KeyCode.RightArrow) && currentBar < chart.Count - 1)
         {
             currentBar++;
             Destroy(currentEnemy);
@@ -36,13 +39,15 @@ public class ChartManager : MonoBehaviour
 
     public void GetChart()
     {
+        string chartID = songManager.GetComponent<SongManager>().songID.ToString();
         List<string> chartStrings = new List<string>();
-        chartStrings.AddRange(System.IO.File.ReadAllLines("Assets/Scripts/ChartScripts/Chart1.txt"));
+        chartStrings.AddRange(System.IO.File.ReadAllLines("Assets/Scripts/ChartScripts/Chart" + chartID + ".txt"));
         for(int i = 0; i < chartStrings.Count; i++)
         {
             int parsedChartValue = int.Parse(chartStrings[i]);
             chart.Add(parsedChartValue);
         }
+        Debug.Log("Chart Pulled from: " + "Assets/Scripts/ChartScripts/Chart" + chartID + ".txt");
     }
     public void GetBarEnemy()
     {
@@ -56,6 +61,16 @@ public class ChartManager : MonoBehaviour
         {
             GameObject newSwapper = Instantiate(swapper, transform.position, transform.rotation);
             currentEnemy = newSwapper;
+        }
+        else if (currentBarChart == 3)
+        {
+            GameObject newPhantom = Instantiate(phantom, transform.position, transform.rotation);
+            currentEnemy = newPhantom;
+        }
+        else if (currentBarChart == 4)
+        {
+            GameObject newPhantom = Instantiate(stretcher, transform.position, transform.rotation);
+            currentEnemy = newPhantom;
         }
     }
 }

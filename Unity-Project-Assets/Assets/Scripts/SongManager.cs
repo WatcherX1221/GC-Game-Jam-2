@@ -20,6 +20,10 @@ public class SongManager : MonoBehaviour
 
     public int bpb = 4;
 
+    // Idenitifes the song
+
+    public int songID;
+
     // Start is called before the first frame update
     void Start()
     {

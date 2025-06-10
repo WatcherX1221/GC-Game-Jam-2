@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Swapper : MonoBehaviour
@@ -8,7 +9,7 @@ public class Swapper : MonoBehaviour
     GameObject songManager;
     public List<GameObject> lanes = new List<GameObject>();
     public int spawnedProjectiles;
-    public GameObject lesserProj;
+    public GameObject attackObj;
     public List<GameObject> attacks = new List<GameObject>();
     public int dir;
     SpriteRenderer sr;
@@ -19,6 +20,7 @@ public class Swapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnedProjectiles = 0;
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -63,19 +65,10 @@ public class Swapper : MonoBehaviour
 
         if (spawnedProjectiles < songManager.GetComponent<SongManager>().laneCount - 1)
         {
-            GameObject attack = Instantiate(lesserProj, transform.position, transform.rotation);
-            attack.GetComponent<LesserATK>().owningEnemy = this.gameObject;
+            GameObject attack = Instantiate(attackObj, transform.position, transform.rotation);
+            attack.GetComponent<Attack>().owningEnemy = this.gameObject;
             spawnedProjectiles++;
             attacks.Add(attack);
-            for (int i = 0; attacks.Count > 0; i++)
-            {
-                if (attack.transform.position == attacks[i].transform.position)
-                {
-                    Destroy(attack);
-                    spawnedProjectiles--;
-                }
-            }
         }
-
     }
 }

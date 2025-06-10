@@ -100,7 +100,7 @@ MonoBehaviour:
   lane: 0
   lanes: []
   spawnedProjectiles: 0
-  lesserProj: {fileID: 2337511297013445685, guid: e29e5ab37aea2e04ab56327511942c49, type: 3}
+  attackObj: {fileID: 2337511297013445685, guid: e29e5ab37aea2e04ab56327511942c49, type: 3}
   attacks: []
   dir: 0
   faceLeft: {fileID: 1093983235, guid: 3e054b7bcb22f494d9f372d5fee153cf, type: 3}

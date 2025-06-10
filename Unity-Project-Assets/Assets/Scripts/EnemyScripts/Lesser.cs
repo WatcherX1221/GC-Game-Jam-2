@@ -8,7 +8,7 @@ public class Lesser : MonoBehaviour
     GameObject songManager;
     public List<GameObject> lanes = new List<GameObject>();
     public int spawnedProjectiles;
-    public GameObject lesserProj;
+    public GameObject attackObj;
     public List<GameObject> attacks = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -35,9 +35,9 @@ public class Lesser : MonoBehaviour
 
         if(spawnedProjectiles < (songManager.GetComponent<SongManager>().bpb - 1) / 2)
         {
-            GameObject attack = Instantiate(lesserProj, transform.position, transform.rotation);
+            GameObject attack = Instantiate(attackObj, transform.position, transform.rotation);
             spawnedProjectiles++;
-            attack.GetComponent<LesserATK>().owningEnemy = this.gameObject;
+            attack.GetComponent<Attack>().owningEnemy = this.gameObject;
             attacks.Add(attack);
         }
     }

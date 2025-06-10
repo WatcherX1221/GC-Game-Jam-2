@@ -346,6 +346,8 @@ MonoBehaviour:
   chart: 
   lesser: {fileID: 6772161684406813685, guid: 3436df47b746707469f317abcfa8c461, type: 3}
   swapper: {fileID: 6567943406286130957, guid: 10397c1477221794a8bf8ed8e73a69a4, type: 3}
+  phantom: {fileID: 1135889672450146150, guid: 131deed5c32aa0440a4c3bfc9a31b29a, type: 3}
+  stretcher: {fileID: 7613186417445514342, guid: e26c3f04f3a06bc42a572ef0b91cae96, type: 3}
   currentEnemy: {fileID: 0}
 --- !u!4 &585744555
 Transform:
@@ -387,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 730148686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: -4.5761914}
+  m_LocalPosition: {x: 0, y: -1.25, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -418,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 1286291843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: -4.5761914}
+  m_LocalPosition: {x: 0, y: 1.25, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,7 +693,7 @@ Transform:
   m_GameObject: {fileID: 1811480649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.75, z: -4.5761914}
+  m_LocalPosition: {x: 0, y: -3.75, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -745,6 +747,7 @@ MonoBehaviour:
   bpm: 0
   difficulty: 0
   bpb: 4
+  songID: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
